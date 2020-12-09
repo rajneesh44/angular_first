@@ -25,19 +25,26 @@ export class HeroDetailComponent implements OnInit {
     this.prevname = this.hero.name;
     console.log( this.hero);
   }
+
   ngOnChanges(changes: SimpleChanges): void {
     this.user = this.hero.name;
     this.prevname = this.hero.name;
   }
+
   change(): void {
     // console.log(this.hero.name);
     this.prevname = this.hero.name;
     this.hero.name = this.user;
-    // console.log(this.user);
-    // this.user = '';
   }
   onClear(): void {
     this.hero.name = this.prevname;
     this.user = this.hero.name;
+  }
+
+  onFocus(): void{
+    this.hero.name = 'typing...';
+  }
+  outFocus(): void{
+    this.hero.name = this.prevname;
   }
 }

@@ -13,6 +13,8 @@ export class HeroesComponent implements OnInit {
 
   heroes !: Hero[];
   selectedHero !: Hero;
+  // heroListconst result : string[] = [];
+  heroList: Hero[] = [];
   constructor(private heroService: HeroService, private messageService: MessageService) { }
 
   ngOnInit(): void {
@@ -26,6 +28,9 @@ export class HeroesComponent implements OnInit {
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
+    this.heroList.push(this.selectedHero);
     this.messageService.add(`HeroesComponent : Selected hero id = ${ hero.id }`);
+    console.log(this.heroList);
   }
+
 }

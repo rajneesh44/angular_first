@@ -8,4 +8,4 @@
     <!-- </a> -->
   </li>
 </ul>
-<app-hero-detail [hero] = "selectedHero" *ngIf="selectedHero"></app-hero-detail>
+<app-hero-detail *ngFor="let selectedHero of heroList" [hero] = "selectedHero"></app-hero-detail>
